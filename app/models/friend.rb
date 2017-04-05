@@ -25,6 +25,10 @@ class Friend < ApplicationRecord
     def inverse_friend_options
       { friend_user_id: user_id, user_id: friend_user_id }
     end
+
+    def find_friend
+      User.find(self.friend_user_id)
+    end
 end
 # user = User.find(params[:id])
 # current_user.friends.new(friend_id: params[:id])
