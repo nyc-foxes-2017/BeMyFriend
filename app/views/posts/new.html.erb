@@ -1,0 +1,14 @@
+<div class="new-post">
+  <%= form_for :post, url: posts_path do |p| %>
+    <p>
+      <%= p.label :content %>
+      <%= p.text_area :content %>
+    </p>
+    <p>
+      <%=p.submit%>
+    </p>
+  <%end%>
+
+<%= link_to 'Back', posts_path %>
+
+</div>
