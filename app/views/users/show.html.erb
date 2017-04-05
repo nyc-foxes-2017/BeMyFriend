@@ -1,0 +1,10 @@
+<span class="user_profile"><h2><%=@user.username%>'s Profile</h2></span>
+
+<div class="container">
+  <h3>All of <%= @user.username%>'s Post</h3>
+    <ul>
+      <%= @user.posts.each do |post| %>
+      <%= post.content %>
+      <%= post.created_at %>
+    </ul>
+</div>
