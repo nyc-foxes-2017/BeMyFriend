@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20170405141856) do
   enable_extension "plpgsql"
 
   create_table "friend_requests", force: :cascade do |t|
-    t.integer  "friend1_id",                 null: false
-    t.integer  "friend2_id",                 null: false
+    t.integer  "user_id",                    null: false
+    t.integer  "friend_id",                  null: false
     t.boolean  "accepted",   default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
-    t.index ["friend1_id"], name: "index_friend_requests_on_friend1_id", using: :btree
-    t.index ["friend2_id"], name: "index_friend_requests_on_friend2_id", using: :btree
+    t.index ["friend_id"], name: "index_friend_requests_on_friend_id", using: :btree
+    t.index ["user_id"], name: "index_friend_requests_on_user_id", using: :btree
   end
 
   create_table "friends", force: :cascade do |t|
