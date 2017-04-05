@@ -1,6 +1,7 @@
 class LikesController < ApplicationController
   def create
-    @like = current_user.likes.new(post_id: params[:id])
+    post = Post.find(params[:id])
+    @like = current_user.likes.new(post_id: post.id)
     @like.save
     redirect_to :back
   end
